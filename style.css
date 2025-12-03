@@ -20,28 +20,35 @@
 
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(
-    circle at top,
-    #1e293b 0,
-    #020617 50%,
-    #020617 100%
-  );
   color: var(--text-main);
   min-height: 100vh;
   scroll-behavior: smooth;
+  position: relative;
+  background: #020617; /* fallback */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% -20%, #1e293b 0%, #020617 70%);
 }
 
 .page {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem 1.25rem 3rem;
+  padding-top: 100px; /* adjust if header is taller/shorter */
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 20;
-  /*backdrop-filter: blur(18px);*/
+  left: 0;
+  right: 0;
+  z-index: 999;
+  backdrop-filter: blur(18px);
   background: linear-gradient(
     to bottom,
     rgba(2, 6, 23, 0.96),
@@ -165,6 +172,7 @@ section {
   );
   padding: 1.5rem 1.4rem;
   box-shadow: var(--shadow-soft);
+  scroll-margin-top: 90px;
 }
 
 /* Hero */
@@ -192,8 +200,9 @@ section {
 
 .hero-title span {
   background: linear-gradient(to right, #a855f7, #6366f1, #22d3ee);
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
 }
 
@@ -348,7 +357,6 @@ section {
   border: 1px solid rgba(148, 163, 184, 0.5);
   color: #e5e7eb;
 }
-
 /* Education */
 #education {
   border-radius: var(--radius-lg);
@@ -565,11 +573,14 @@ footer a {
   }
 
   .hero-aside {
-    order: -1;
+    order: 1;
   }
 
   header {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   .nav {
@@ -578,7 +589,11 @@ footer a {
   }
 
   nav ul {
-    display: none; /* keep it super simple on mobile */
+    display: none;
+  }
+
+  section {
+    scroll-margin-top: 90px;
   }
 }
 
@@ -589,5 +604,62 @@ footer a {
 
   section {
     padding-inline: 1rem;
+  }
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2.5px;
+  background: var(--text-main);
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* MOBILE NAV DROPDOWN */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+@media (max-width: 800px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 12px;
+    padding: 1rem 1.4rem;
+    flex-direction: column;
+    gap: 1rem;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 }
