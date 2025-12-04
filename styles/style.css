@@ -40,7 +40,7 @@ body {
   position: relative;
 
   /* Single unified background */
-  background: url(assets/bg-gradient-4k.jpg) center top / cover no-repeat fixed;
+  background: url(../assets/bg-gradient-4k.jpg) center top / cover no-repeat fixed;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
