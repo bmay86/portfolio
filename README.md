@@ -1,37 +1,44 @@
 # Developer Portfolio Website
 
-A modern, responsive, dark-luxury themed developer portfolio designed to showcase my skills, experience, and future full-stack projects.  
-This site adapts smoothly across all screen sizes and includes a mobile-friendly navigation menu with animated interactions.
+This project is my personal developer portfolio, built to represent who I am as a creator and the kind of work I want to bring into the world. The site reflects my style clean, modern, focused, and designed with intention. It gives me a place to share what I am learning, the projects I am building, and the skills I continue to strengthen as I move deeper into full stack development.
+
+I designed this portfolio with a dark luxury aesthetic because I wanted something that feels calm, polished, and precise. The layout adapts smoothly across all devices, and the navigation is built to stay out of the way while keeping everything easy to reach. Every part of the interface is shaped to feel intentional, from the animations to the card layouts to the way each section snaps into place.
 
 Features
 
-- Fully responsive layout
-  Optimized for desktop, tablet, and mobile.
+Fully responsive layout
+The site adjusts naturally across desktops, tablets, and mobile screens.
 
-- Fixed header navigation
-  Always stays at the top of the page for smooth browsing.
+Fixed header navigation
+The header stays visible while you browse, creating a smooth and steady experience.
 
-- Mobile dropdown menu
-  Includes a hamburger menu with open/close animation.
+Mobile menu with a clean dropdown interaction
+The hamburger menu opens and closes smoothly and automatically collapses when a link is selected.
 
-- Auto-closing navigation
-  Menu closes automatically after selecting a link.
+Dark luxury visual theme
+Soft gradients, minimal color accents, and subtle depth create a focused environment for the content.
 
-- Dark luxury UI design
-  Clean gradients, soft shadows, and elegant card components.
+Refined scroll behavior
+Each section aligns correctly underneath the fixed header for a clean reading flow.
 
-- Smooth scrolling
-  Sections align perfectly below the fixed header using `scroll-margin-top`.
-
-- Dynamic footer year\*\*  
-  Automatically displays the current year using JavaScript.
+Dynamic footer year
+The current year is inserted automatically through JavaScript.
 
 Tech Stack
 
-- HTML5 – Semantic structure
-- CSS3 – Custom styling, gradients, animations
-- JavaScript – Mobile menu logic, dynamic footer year
-- Google Fonts – Inter font family
-- Responsive Layout – Media queries for all screen sizes
+HTML for structure
+CSS for styling animations layout and overall visual identity
+JavaScript for interactive elements including the mobile navigation and footer
+Google Fonts for clean modern typography
+Responsive design patterns to ensure the site feels natural on every screen size
 
-📁 Project Structure
+Project Structure
+/
+├── index.html
+├── styles/
+│   ├── style.css
+│   └── style.min.css
+├── scripts/
+│   └── script.min.js
+└── assets/
+    └── bg-gradient-4k.jpg
