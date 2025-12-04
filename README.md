@@ -4,7 +4,7 @@ This project is my personal developer portfolio, built to represent who I am as 
 
 I designed this portfolio with a dark luxury aesthetic because I wanted something that feels calm, polished, and precise. The layout adapts smoothly across all devices, and the navigation is built to stay out of the way while keeping everything easy to reach. Every part of the interface is shaped to feel intentional, from the animations to the card layouts to the way each section snaps into place.
 
-Features
+## Features
 
 Fully responsive layout
 The site adjusts naturally across desktops, tablets, and mobile screens.
@@ -24,7 +24,7 @@ Each section aligns correctly underneath the fixed header for a clean reading fl
 Dynamic footer year
 The current year is inserted automatically through JavaScript.
 
-Tech Stack
+## Tech Stack
 
 HTML for structure
 CSS for styling animations layout and overall visual identity
@@ -32,7 +32,8 @@ JavaScript for interactive elements including the mobile navigation and footer
 Google Fonts for clean modern typography
 Responsive design patterns to ensure the site feels natural on every screen size
 
-Project Structure
+## Project Structure
+
 /
 ├── index.html
 ├── styles/
