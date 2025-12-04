@@ -40,7 +40,8 @@ body {
   position: relative;
 
   /* Single unified background */
-  background: url(../assets/bg-gradient-4k.jpg) center top / cover no-repeat fixed;
+  background: url(../assets/bg-gradient-4k.jpg) center top / cover no-repeat
+    fixed;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -441,6 +442,47 @@ section {
   margin-left: 1.2rem;
   line-height: 1.6;
   font-size: 0.85rem;
+}
+
+/* ------------------------------ */
+/*            EXPERIENCE           */
+/* ------------------------------ */
+#experience {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: radial-gradient(
+    circle at top left,
+    rgba(148, 163, 184, 0.18),
+    rgba(15, 23, 42, 0.96)
+  );
+  padding: 1.5rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.experience-item {
+  margin-bottom: 1.4rem;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.experience-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-main);
+}
+
+.experience-item p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item p strong {
+  color: var(--text-main);
 }
 
 /* ------------------------------ */
