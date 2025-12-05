@@ -9,6 +9,7 @@
   --accent-strong: #4f46e5;
   --text-main: #e5e7eb;
   --text-muted: #9ca3af;
+  --text-body: #c5c9d2;
   --card-bg: rgba(15, 23, 42, 0.9);
   --border-subtle: rgba(148, 163, 184, 0.25);
   --radius-lg: 18px;
@@ -361,7 +362,7 @@ section {
 /* ------------------------------ */
 #about p {
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.7;
   margin-bottom: 1rem;
 }
@@ -422,7 +423,7 @@ section {
 
 .edu-highlights {
   list-style: square;
-  color: var(--text-muted);
+  color: var(--text-body);
   margin-left: 1.2rem;
   line-height: 1.6;
   font-size: 0.85rem;
@@ -466,7 +467,7 @@ section {
 
 .exp-desc {
   font-size: 0.86rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.6;
 }
 
@@ -543,7 +544,7 @@ section {
 
 .project-desc {
   font-size: 0.83rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.5;
 }
 
@@ -601,7 +602,7 @@ section {
   border: 1px solid rgba(148, 163, 184, 0.5);
   background: rgba(15, 23, 42, 0.95);
   padding: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   font-size: 0.83rem;
 }
 
