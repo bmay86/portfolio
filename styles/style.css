@@ -583,6 +583,57 @@ section {
 }
 
 /* ------------------------------ */
+/*        Thoughts in Code        */
+/* ------------------------------ */
+.thoughts-scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.thoughts-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.thoughts-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+}
+
+.thought-card {
+  min-width: 260px;
+  max-width: 280px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.thought-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.thought-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.thought-text {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* ------------------------------ */
 /*            CONTACT             */
 /* ------------------------------ */
 #contact .contact-row {
