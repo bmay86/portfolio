@@ -668,7 +668,7 @@ section {
 .thought-text {
   font-size: 0.85rem;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: var(--text-body);
 }
 
 /* Optional: hide scrollbar on small screens for a cleaner feel */
