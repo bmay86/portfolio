@@ -585,7 +585,13 @@ section {
 /* ------------------------------ */
 /*        Thoughts in Code        */
 /* ------------------------------ */
-/* Thoughts in Code – horizontal snap scroll */
+#thoughts {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 0 1.25rem;
+}
+
 .thoughts-scroll {
   display: flex;
   gap: 1.25rem;
@@ -595,6 +601,15 @@ section {
   scroll-padding-left: 0.25rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; /* Firefox */
+  .thoughts-scroll {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 40px,
+      black calc(100% - 40px),
+      transparent 100%
+    );
+  }
 }
 
 .thoughts-scroll::-webkit-scrollbar {
