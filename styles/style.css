@@ -601,15 +601,6 @@ section {
   scroll-padding-left: 0.25rem;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; /* Firefox */
-  .thoughts-scroll {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      black 40px,
-      black calc(100% - 40px),
-      transparent 100%
-    );
-  }
 }
 
 .thoughts-scroll::-webkit-scrollbar {
