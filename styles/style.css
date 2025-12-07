@@ -270,7 +270,15 @@ section {
   background: linear-gradient(to right, #6366f1, #a855f7, #22d3ee);
   color: #f9fafb;
   box-shadow: 0 12px 30px rgba(79, 70, 229, 0.6);
+  transition: all 0.25s ease;
 }
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(79, 70, 229, 0.75);
+  background: linear-gradient(to right, #7c7ff6, #b088ff, #3be2ff);
+}
+
 
 .btn-ghost {
   padding: 0.55rem 1rem;
@@ -278,6 +286,14 @@ section {
   border: 1px solid rgba(148, 163, 184, 0.7);
   background: rgba(15, 23, 42, 0.85);
   color: var(--text-muted);
+  transition: all 0.25s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(148, 163, 184, 0.9);
+  color: var(--text-main);
+  background: rgba(148, 163, 184, 0.12);
+  transform: translateY(-2px);
 }
 
 /* ------------------------------ */
