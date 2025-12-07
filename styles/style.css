@@ -607,12 +607,37 @@ section {
 }
 
 .project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   font-size: 0.78rem;
   text-decoration: none;
   color: #c7d2fe;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+  color: #c7d2fe;
+  transform: translateY(-2px);
+}
+
+.project-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1.5px;
+  background: linear-gradient(to right, #a855f7, #6366f1, #22d3ee);
+  transition: width 0.25s ease;
+}
+
+.project-link:hover::after {
+  width: 100%;
 }
 
 .project-link span {
@@ -631,27 +656,37 @@ section {
 
 .thoughts-scroll {
   display: flex;
+  flex-wrap: nowrap; /* prevents wrapping */
   gap: 1.25rem;
   overflow-x: auto;
   padding: 0.35rem 0 0.9rem;
   scroll-snap-type: x mandatory;
   scroll-padding-left: 0.25rem;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #6366f1 rgba(255, 255, 255, 0.12);
+  scrollbar-width: thin;
 }
 
 .thoughts-scroll::-webkit-scrollbar {
-  height: 6px;
+  height: 8px;
 }
 
 .thoughts-scroll::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 999px;
 }
 
 .thoughts-scroll::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.35);
+  background: linear-gradient(to right, #6366f1, #a855f7, #22d3ee);
   border-radius: 999px;
+}
+.thoughts-scroll::before {
+  content: "";
+  display: block;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  margin-bottom: 6px;
 }
 
 /* Individual thought cards */
@@ -712,16 +747,6 @@ section {
   font-size: 0.85rem;
   line-height: 1.6;
   color: var(--text-body);
-}
-
-/* Optional: hide scrollbar on small screens for a cleaner feel */
-@media (max-width: 768px) {
-  .thoughts-scroll {
-    scrollbar-width: none; /* Firefox */
-  }
-  .thoughts-scroll::-webkit-scrollbar {
-    display: none; /* WebKit */
-  }
 }
 
 /* ------------------------------ */
