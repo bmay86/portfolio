@@ -233,6 +233,12 @@ section {
   scroll-margin-top: 90px;
 }
 
+.section-subtitle em {
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 1;
+}
+
 /* ------------------------------ */
 /*               HERO             */
 /* ------------------------------ */
@@ -398,6 +404,21 @@ section {
   color: var(--text-body);
   line-height: 1.7;
   margin-bottom: 1rem;
+}
+
+/* Match About section spacing + subtitle sizing */
+#about .section-header {
+  margin-bottom: 0.75rem;
+}
+
+#about .section-subtitle {
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+/* Tighten About paragraph spacing so it matches other sections */
+#about p {
+  margin-bottom: 0.75rem;
 }
 
 .skills {
