@@ -15,5 +15,21 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 
+// Lightbox functionality for project images
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox.querySelector("img");
+
+document.querySelectorAll(".lightbox-img").forEach(img => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("show");
+  });
+});
+
+lightbox.addEventListener("click", () => {
+  lightbox.classList.remove("show");
+});
+
+
 // Set current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
