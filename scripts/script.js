@@ -1,34 +1,66 @@
+/* =========================
+   Mobile Navigation
+========================= */
+
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
-// Toggle menu open/close
 hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active"); // animate into "X"
-  navLinks.classList.toggle("show"); // show/hide dropdown
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("show");
 });
 
-// Close menu automatically when clicking a nav link
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
-    hamburger.classList.remove("active"); // reset hamburger
-    navLinks.classList.remove("show"); // hide menu
+    hamburger.classList.remove("active");
+    navLinks.classList.remove("show");
   });
 });
 
-// Lightbox functionality for project images
+/* =========================
+   Lightbox + Gallery
+========================= */
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = lightbox.querySelector("img");
+const prevBtn = lightbox.querySelector(".prev");
+const nextBtn = lightbox.querySelector(".next");
 
-document.querySelectorAll(".lightbox-img").forEach(img => {
+const images = Array.from(document.querySelectorAll(".lightbox-img"));
+let currentIndex = 0;
+
+function showImage(index) {
+  currentIndex = index;
+  lightboxImg.src = images[currentIndex].src;
+}
+
+// Open lightbox
+images.forEach((img, index) => {
   img.addEventListener("click", () => {
-    lightboxImg.src = img.src;
+    showImage(index);
     lightbox.classList.add("show");
   });
 });
 
+// Next / Previous buttons
+prevBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  showImage((currentIndex - 1 + images.length) % images.length);
+});
+
+nextBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  showImage((currentIndex + 1) % images.length);
+});
+
+// Close on background click
 lightbox.addEventListener("click", () => {
   lightbox.classList.remove("show");
 });
+
+/* =========================
+   Mobile Swipe Support
+========================= */
 
 let startX = 0;
 let startY = 0;
@@ -46,8 +78,18 @@ lightbox.addEventListener("touchmove", (e) => {
   const diffX = touch.clientX - startX;
   const diffY = touch.clientY - startY;
 
-  // Swipe down OR horizontal swipe closes lightbox
-  if (Math.abs(diffY) > 80 || Math.abs(diffX) > 80) {
+  if (Math.abs(diffX) > 80) {
+    // swipe left/right = navigate
+    diffX > 0
+      ? showImage((currentIndex - 1 + images.length) % images.length)
+      : showImage((currentIndex + 1) % images.length);
+
+    startX = 0;
+    startY = 0;
+  }
+
+  if (Math.abs(diffY) > 100) {
+    // swipe down = close
     lightbox.classList.remove("show");
     startX = 0;
     startY = 0;
@@ -59,6 +101,8 @@ lightbox.addEventListener("touchend", () => {
   startY = 0;
 });
 
+/* =========================
+   Footer Year
+========================= */
 
-// Set current year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
