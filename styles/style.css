@@ -566,6 +566,7 @@ section {
   );
   opacity: 0;
   transition: opacity 0.18s ease;
+  pointer-events: none;
 }
 
 .project-card:hover {
