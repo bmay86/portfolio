@@ -1001,8 +1001,12 @@ footer a {
   transform: translateY(-50%) scale(1.08);
 }
 
-.lightbox-nav.prev { left: 20px; }
-.lightbox-nav.next { right: 20px; }
+.lightbox-nav.prev {
+  left: 20px;
+}
+.lightbox-nav.next {
+  right: 20px;
+}
 
 /* Hide arrows on very small screens if desired */
 @media (max-width: 480px) {
